@@ -1,0 +1,31 @@
+export const data = [
+  { id: 1, date: "2026-04-02", category: "Food", amount: 500, type: "expense" },
+  {
+    id: 2,
+    date: "2026-04-01",
+    category: "Salary",
+    amount: 50000,
+    type: "income",
+  },
+  {
+    id: 3,
+    date: "2026-04-03",
+    category: "Travel",
+    amount: 1500,
+    type: "expense",
+  },
+  {
+    id: 4,
+    date: "2026-04-04",
+    category: "Shopping",
+    amount: 1500,
+    type: "expense",
+  },
+  {
+    id: 5,
+    date: "2026-04-05",
+    category: "Bills",
+    amount: 1500,
+    type: "expense",
+  },
+];

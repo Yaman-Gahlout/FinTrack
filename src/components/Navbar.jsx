@@ -5,16 +5,22 @@ import { MdOutlineLibraryBooks } from "react-icons/md";
 import { CgInsights } from "react-icons/cg";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveTab } from "../redux/slice/tab.slice";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const dispatch = useDispatch();
   const activeTab = useSelector((state) => state.tab.activeTab);
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const menuItems = [
-    { tab: "Dashboard", icon: <FiHome /> },
-    { tab: "Transactions", icon: <MdOutlineLibraryBooks /> },
-    { tab: "Insights", icon: <CgInsights /> },
+    { tab: "Dashboard", icon: <FiHome />, link: "/" },
+    {
+      tab: "Transactions",
+      icon: <MdOutlineLibraryBooks />,
+      link: "/transactions",
+    },
+    { tab: "Insights", icon: <CgInsights />, link: "/insights" },
   ];
 
   return (
@@ -30,7 +36,10 @@ function Navbar() {
             {menuItems.map((item, index) => (
               <div
                 key={index}
-                onClick={() => dispatch(setActiveTab(item.tab))}
+                onClick={() => {
+                  dispatch(setActiveTab(item.tab));
+                  navigate(item.link);
+                }}
                 className={`flex items-center gap-2 cursor-pointer px-3 py-1 rounded-md transition
                 ${
                   activeTab === item.tab
@@ -75,6 +84,7 @@ function Navbar() {
               onClick={() => {
                 dispatch(setActiveTab(item.tab));
                 setIsOpen(false);
+                navigate(item.link);
               }}
               className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition
              ${

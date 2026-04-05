@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import {
   LineChart,
   Line,
@@ -7,15 +8,16 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  { name: "January", balance: 40000 },
-  { name: "February", balance: 30000 },
-  { name: "March", balance: 25000 },
-  { name: "April", balance: 40000 },
-  { name: "May", balance: 35000 },
-];
-
 function BalanceTrend() {
+  const data = [
+    { name: "Nov", balance: 35000 },
+    { name: "Dec", balance: 45000 },
+    { name: "Jan", balance: 40000 },
+    { name: "Feb", balance: 30000 },
+    { name: "Mar", balance: 45000 },
+    { name: "Apr", balance: useSelector((state) => state.transaction.balance) },
+    ,
+  ];
   return (
     <div className="bg-white rounded-2xl p-5 shadow-sm w-full">
       <h2 className="text-xl font-semibold mb-4 text-gray-700">

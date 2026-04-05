@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import TransactionCard from "./TransactionCard";
+import TransactionCard from "../components/TransactionCard";
 import { FiSearch, FiPlus } from "react-icons/fi";
 
 function TransactionsSection() {
@@ -59,7 +59,7 @@ function TransactionsSection() {
 
           {role === "admin" && (
             <button
-              className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg"
+              className="flex items-center gap-2 bg-blue-600 cursor-pointer text-white px-4 py-2 rounded-lg"
               onClick={() => navigate("/addTransaction")}
             >
               <FiPlus /> Add

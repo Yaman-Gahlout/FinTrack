@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { editTransaction } from "../redux/slice/transaction.slice";
 import toast from "react-hot-toast";
+import { RxCross1 } from "react-icons/rx";
 
 function EditTransactionForm() {
   const navigate = useNavigate();
@@ -53,6 +54,11 @@ function EditTransactionForm() {
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 relative animate-fadeIn">
         <div className="flex justify-between items-center mb-5">
           <h2 className="text-xl font-bold text-gray-800">Edit Transaction</h2>
+          <RxCross1
+            size={25}
+            className="cursor-pointer"
+            onClick={() => navigate("/")}
+          />
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -122,18 +128,17 @@ function EditTransactionForm() {
 
           <div className="flex gap-3 pt-3">
             <button
-              type="submit"
-              className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-medium hover:scale-105 transition"
-            >
-              Add Transaction
-            </button>
-
-            <button
               type="button"
               className="flex-1 bg-gray-200 py-3 rounded-lg"
               onClick={() => navigate("/")}
             >
               Back
+            </button>
+            <button
+              type="submit"
+              className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-medium hover:scale-105 transition"
+            >
+              Edit Transaction
             </button>
           </div>
         </form>

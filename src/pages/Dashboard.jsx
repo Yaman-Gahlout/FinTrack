@@ -1,7 +1,7 @@
 import SummaryCard from "../components/SummaryCard";
 import ChartsSection from "../components/CardSection";
-import TransactionsSection from "../components/Transactions";
-import Insights from "../components/Insights";
+import TransactionsSection from "./Transactions";
+import Insights from "./Insights";
 
 function Dashboard() {
   return (

@@ -1,7 +1,7 @@
 import Dashboard from "./pages/Dashboard";
 import { Route, Routes } from "react-router-dom";
-import Transactions from "./components/Transactions";
-import Insights from "./components/Insights";
+import Transactions from "./pages/Transactions";
+import Insights from "./pages/Insights";
 import Navbar from "./components/Navbar";
 import AddTransactionForm from "./components/AddTransactionForm";
 import EditTransactionForm from "./components/EditTransactionForm";

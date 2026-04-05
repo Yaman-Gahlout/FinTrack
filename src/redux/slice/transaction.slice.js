@@ -3,8 +3,11 @@ import { data } from "../../data";
 const transactionSlice = createSlice({
   name: "transaction",
   initialState: {
-    balance: 70000,
-    expenses: 20000,
+    balance: 60000,
+    expenses: data.reduce(
+      (acc, t) => (t.type === "expense" ? acc + t.amount : acc),
+      0,
+    ),
     income: 50000,
     transactions: data,
   },

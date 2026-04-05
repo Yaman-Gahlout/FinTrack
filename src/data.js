@@ -11,7 +11,7 @@ export const data = [
     id: 3,
     date: "2026-04-03",
     category: "Travel",
-    amount: 1500,
+    amount: 2500,
     type: "expense",
   },
   {
@@ -25,7 +25,21 @@ export const data = [
     id: 5,
     date: "2026-04-05",
     category: "Bills",
-    amount: 1500,
+    amount: 2000,
+    type: "expense",
+  },
+  {
+    id: 6,
+    date: "2026-04-05",
+    category: "Gym",
+    amount: 3000,
+    type: "expense",
+  },
+  {
+    id: 7,
+    date: "2026-04-05",
+    category: "Study Material",
+    amount: 2500,
     type: "expense",
   },
 ];
